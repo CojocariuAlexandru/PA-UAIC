@@ -1,6 +1,16 @@
 package com.company;
+import  java.util.*;
+import java.util.stream.*;
 
 public class Main {
+    /*
+        Cojocariu Alexandru, IIA2
+        Advanced programming - Laboratory 4 homework
+
+        Done: Compulsory, Optional, Bonus
+        Not done: Generating fake names with third party library
+    */
+
     // Agendas and preferences available to everyone to work with
     public static ResidentAgenda allResidents = new ResidentAgenda();
     public static HospitalAgenda allHospitals = new HospitalAgenda();
@@ -35,5 +45,16 @@ public class Main {
 
         solveMatching.solveMatching();
         solveMatching.printSolution();
-    }
+
+        //From compulsory - the streams problem
+        allResidents.getResidentAgenda().stream().filter(n -> {if(n.hasAcceptableHospital(spital1) == true
+                                                                 && n.hasAcceptableHospital(spital3) == true)
+                                                                return true;
+                                                                else
+                                                                return false;})
+                                        .forEach(n -> System.out.println(n.getName()));
+
+        /*allHospitals.getHospitalAgenda().stream().filter(n -> {if(n.isItTopPreference(residentAlex) == true)return true; else return false;})
+                .forEach(n -> System.out.println(n.getName()));*/
+     }
 }

@@ -57,4 +57,14 @@ public class Hospital  implements Comparable<Hospital>{
             residentPreferences.add(newPreferateResident);
         inputHandler.preferences.addHospitalPreference(this, residentPreferences);
     }
+
+    public boolean isItTopPreference(Resident candidateResident){
+        if(inputHandler.preferences.getHospitalPreferences().get(this).get(0).equals(candidateResident) == true)
+            return true;
+        return false;
+    }
+
+    public List<Resident> getResidentsInThisHospital(){
+        return residentsInThisHospital;
+    }
 }

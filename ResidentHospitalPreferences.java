@@ -2,8 +2,10 @@ package com.company;
 import java.util.*;
 
 public class ResidentHospitalPreferences {
+    //Two different implementations of Map as requested
     private Map<Resident, List<Hospital>> residentPreferences = new HashMap<>();
     private Map<Hospital, List<Resident>> hospitalPreferences = new LinkedHashMap<>();
+
     public void addResidentPreference(Resident newResident, List<Hospital> hospitalPreferences){
         residentPreferences.put(newResident, hospitalPreferences);
     }

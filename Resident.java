@@ -29,4 +29,10 @@ public class Resident {
             hospitalPreferences.add(newPreferateHospital);
         inputHandler.preferences.addResidentPreference(this, hospitalPreferences);
     }
+    public boolean hasAcceptableHospital(Hospital hasHospital){
+        for(Hospital hospital : inputHandler.preferences.getResidentPreferences().get(this))
+            if(hospital.equals(hasHospital))
+                return true;
+        return false;
+    }
 }
