@@ -1,0 +1,11 @@
+Catalog: freshestCatalog
+Document element 1:
+Document's name: null
+Document's path: ./src/firstScreenshot.png
+Document's ID: 1
+Document's tags: {}
+Document element 2:
+Document's name: null
+Document's path: ./src/secondScreenshot.png
+Document's ID: 2
+Document's tags: {}
