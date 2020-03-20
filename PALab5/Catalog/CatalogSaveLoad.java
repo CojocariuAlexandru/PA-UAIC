@@ -66,4 +66,29 @@ public class CatalogSaveLoad {
             e.printStackTrace();
         }
     }
+    
+    public static void CatalogSaveInHTML(Catalog catalogToBeTranscribed) {
+        int i;
+        String pathToFileStrorage = "./src/catalogGeneralInfo.txt";
+        try {
+            String transcribedCatalogName = catalogToBeTranscribed.getCatalogName();
+            FileWriter fileWriter = new FileWriter(pathToFileStrorage);
+
+            fileWriter.write("<h1>Catalog: </h1>" + transcribedCatalogName + "\n");
+            for(i=0; i<catalogToBeTranscribed.getDocumentList().size(); i++){
+                fileWriter.write("<ul>");
+                fileWriter.write("<li>Document element " + (i+1) + ":</li>\n");
+                fileWriter.write("<li>Document's name: " + catalogToBeTranscribed.getDocumentList().get(i).getDocumentName() + ":</li>\n");
+                fileWriter.write("<li>Document's path: " + catalogToBeTranscribed.getDocumentList().get(i).getDocumentPath() + ":</li>\n");
+                fileWriter.write("<li>Document's ID: " +   catalogToBeTranscribed.getDocumentList().get(i).getDocumentID()   + ":</li>\n");
+                fileWriter.write("<li>Document's tags: " + catalogToBeTranscribed.getDocumentList().get(i).getDocumentTags() + ":</li>\n");
+                fileWriter.write("</ul>");
+            }
+
+            fileWriter.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
+    }
 }
